@@ -1,0 +1,29 @@
+<ng-template #contenido let-modal>
+  <button
+  class="close btn btn-secondary"
+  aria-label="close"
+  type="button"
+  (click)="modal.dismiss()"
+>
+  <span aria-hidden="true">&times;</span>
+</button>
+  <div class="modal-header">
+  
+    <div class="modal-body">
+      <h1>
+        En este componente debe indicar el número de páginas e idiomas de su web
+      </h1>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close()">
+      OK
+    </button>
+  </div>
+</ng-template>
+
+<button
+  type="button"
+  class="btn btn-outline-warning"
+  (click)="openSM(contenido)"
+>Info</button>

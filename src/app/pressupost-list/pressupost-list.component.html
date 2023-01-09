@@ -1,0 +1,41 @@
+<table class="table table-primary table-striped my-5">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Client</th>
+      <th scope="col">Budget</th>
+      <th scope="col">Total</th>
+      <th scope="col">Date</th>
+      <th scope="col">Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of budgets">
+      <th scope="row"></th>
+      <td>{{ list.nameClient }}</td>
+      <td>{{ list.nameBudget }}</td>
+      <td>{{ list.precioTotal }} €</td>
+      <td>{{ list.date }}</td>
+      <td>
+        <button class="btn btn-outline-primary" (click)="verBudget(list.id)">
+          Show budget
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="container">
+  <div class="row">
+  <button class="btn btn-outline-primary" (click)="ordenarAlf()">
+    Ordenar alfabéticamente
+  </button>
+  <button class="btn btn-outline-primary" (click)="ordenarFecha()">
+    Ordenador por fecha
+  </button>
+  <button class="btn btn-outline-primary" (click)="reinicio()">
+    Reinicializar orden
+  </button>
+</div>
+</div>
+
+<div *ngIf="budgetshow"><app-budget-detail></app-budget-detail></div>
